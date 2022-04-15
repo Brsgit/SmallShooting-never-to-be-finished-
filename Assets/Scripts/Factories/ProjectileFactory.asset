@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dac88f946285d9458b91d815be698d5, type: 3}
+  m_Name: ProjectileFactory
+  m_EditorClassIdentifier: 
+  _bullet:
+    Prefab: {fileID: 7676572712908554430, guid: c708213f72700d64eb1e5121b5d3bf41, type: 3}
+    Scale: 0.5
+    Damage: 20
+    Speed: 30
+    LifeTime: 2
+  _bigBullet:
+    Prefab: {fileID: 8936150056776162135, guid: 2785eb1c80989ce4b886cf07d6c157e6, type: 3}
+    Scale: 1
+    Damage: 50
+    Speed: 10
+    LifeTime: 3

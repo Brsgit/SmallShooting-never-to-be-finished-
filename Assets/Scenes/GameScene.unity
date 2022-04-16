@@ -1993,8 +1993,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a27c0810e670a4cb2c33e7381626b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waypoints: {fileID: 1382354850}
-  Pool: {fileID: 963646892}
 --- !u!195 &1255606242
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2027,6 +2025,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f8672425d7aca148a881687d9cbba02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1255606244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255606239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4aebb2e72ea0945a9ec6b3e358b642, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1372187687
@@ -2109,8 +2119,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1382354849}
   - component: {fileID: 1382354850}
+  - component: {fileID: 1382354851}
   m_Layer: 0
-  m_Name: WaypointsContainer
+  m_Name: WaypointsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2143,6 +2154,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3598de0a13da52d4aa67e8d855acb34c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1382354851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382354848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ef34f1a3e0ebe3448d4e6d674b57216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1386161276

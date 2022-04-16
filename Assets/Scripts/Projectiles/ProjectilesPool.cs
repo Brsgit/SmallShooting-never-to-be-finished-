@@ -1,31 +1,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectilesPool : MonoBehaviour
+
+namespace Projectile
 {
-    [SerializeField] private ProjectileFactory _factory;
-    [SerializeField] private ProjectileType _type;
-
-    private const int POOL_SIZE = 128;
-    private Queue<Projectile> _pool = new Queue<Projectile>();
-
-    private Transform _transform;
-
-    private void Start()
+    public class ProjectilesPool : MonoBehaviour
     {
-        _transform = transform;
+        [SerializeField] private ProjectileFactory _factory;
+        [SerializeField] private ProjectileType _type;
 
-        for (int i = 0; i < POOL_SIZE; i++)
+        private const int POOL_SIZE = 128;
+        private Queue<Projectile> _pool = new Queue<Projectile>();
+
+        private Transform _transform;
+
+        private void Start()
         {
-            var projectile = _factory.Get(_type, _transform);
-            _pool.Enqueue(projectile);
-        }
-    }
+            _transform = transform;
 
-    public IShootable GetItemFromQ()
-    {
-        var projectile = _pool.Dequeue();
-        projectile.gameObject.SetActive(true);
-        return projectile;
+            for (int i = 0; i < POOL_SIZE; i++)
+            {
+                var projectile = _factory.Get(_type, _transform);
+                _pool.Enqueue(projectile);
+            }
+        }
+
+        public IShootable GetItemFromQ()
+        {
+            var projectile = _pool.Dequeue();
+            projectile.gameObject.SetActive(true);
+            return projectile;
+        }
     }
 }

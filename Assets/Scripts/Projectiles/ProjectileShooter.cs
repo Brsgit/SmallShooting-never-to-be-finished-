@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Projectile;
 using UnityEngine;
 
 public class ProjectileShooter : MonoBehaviour

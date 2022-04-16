@@ -1,6 +1,9 @@
 
-public enum ProjectileType
+namespace Projectile
 {
-    Bullet,
-    BitBullet
+    public enum ProjectileType
+    {
+        Bullet,
+        BitBullet
+    }
 }

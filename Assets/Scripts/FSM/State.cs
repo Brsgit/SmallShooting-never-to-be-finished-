@@ -1,3 +1,4 @@
+using UnityEngine;
 
 public abstract class State 
 {
@@ -10,7 +11,7 @@ public abstract class State
 
     public virtual void Start() { }
 
-    public virtual void Shoot() { }
+    public virtual void Shoot(Vector3 destination) { }
 
     public virtual void Move() { }
 }

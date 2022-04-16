@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Projectile;
 using UnityEngine;
 
 public class ReadyToShootState : State
@@ -11,8 +10,9 @@ public class ReadyToShootState : State
         base.Start();
     }
 
-    public override void Shoot()
+    public override void Shoot(Vector3 destination)
     {
-        base.Shoot();
+        IShootable projectile = (IShootable)PlayerController.Pool.GetItemFromQ();
+        projectile.Shoot(destination);
     }
 }

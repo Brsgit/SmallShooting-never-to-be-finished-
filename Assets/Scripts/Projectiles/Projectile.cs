@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Projectile
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class Projectile : MonoBehaviour, IShootable
+    public class Projectile : MonoBehaviour, IShootable, IPoolable
     {
         [SerializeField] private ProjectileView _view;
 
@@ -39,7 +39,7 @@ namespace Projectile
             gameObject.SetActive(true);
         }
 
-        public void Recycle()
+        public void Deactivate()
         {
             OrigingFactory.Reclaim(this);
         }

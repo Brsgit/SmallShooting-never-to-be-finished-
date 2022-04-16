@@ -35,7 +35,7 @@ public class ProjectileShooter : MonoBehaviour
             _destination = ray.GetPoint(1000);
         }
 
-        var projectile = _pool.GetItemFromQ();
+        IShootable projectile = (IShootable)_pool.GetItemFromQ();
         projectile.Shoot(_destination);
     }
 }

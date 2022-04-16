@@ -10,7 +10,7 @@ namespace Projectile
         [SerializeField] private ProjectileType _type;
 
         private const int POOL_SIZE = 128;
-        private Queue<IShootable> _pool = new Queue<IShootable>();
+        private Queue<IPoolable> _pool = new Queue<IPoolable>();
 
         private Transform _transform;
 
@@ -25,7 +25,7 @@ namespace Projectile
             }
         }
 
-        public IShootable GetItemFromQ()
+        public IPoolable GetItemFromQ()
         {
             var projectile = _pool.Dequeue();
             projectile.Activate();

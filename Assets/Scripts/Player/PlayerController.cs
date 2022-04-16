@@ -1,4 +1,5 @@
 using Navigation;
+using Projectile;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -6,6 +7,7 @@ using UnityEngine.AI;
 public class PlayerController : StateMachine
 {
     public WaypointsContainer Waypoints;
+    public ProjectilesPool Pool;
 
     private IRayProvider _rayProvider;
     private ITargetProvider _targetProvider;
@@ -41,7 +43,7 @@ public class PlayerController : StateMachine
     {
         Ray ray = _rayProvider.CreateRay();
         Vector3 target = _targetProvider.HitCheck(ray);
-        State.Shoot();
+        State.Shoot(target);
     }
 
 

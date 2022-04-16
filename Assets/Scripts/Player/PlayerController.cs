@@ -1,5 +1,6 @@
 using Navigation;
 using Projectile;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,10 +8,10 @@ using UnityEngine.AI;
 [RequireComponent(typeof(PlayerView))]
 public class PlayerController : StateMachine
 {
-    private WaypointController _waypointsController;
+    [SerializeField] private WaypointController _waypointsController;
     public WaypointController WaypointsController => _waypointsController;
 
-    private ProjectilePool _pool;
+    [SerializeField] private ProjectilePool _pool;
     public ProjectilePool Pool => _pool;
 
     private NavMeshAgent _agent;
@@ -32,8 +33,7 @@ public class PlayerController : StateMachine
 
     private void Start()
     {
-        SetState(new ReadyToShootState(this));
-        _view.SetIdleAnimation();
+        SetShootingState();
     }
 
     private void OnEnable()
@@ -50,7 +50,14 @@ public class PlayerController : StateMachine
     {
         SetState(new MoveState(this));
         State.Move();
+        StartCoroutine(ReachedDestination());
         _view.SetRunAnimation();
+    }
+    
+    private void SetShootingState()
+    {
+        SetState(new ReadyToShootState(this));
+        _view.SetIdleAnimation();
     }
 
     private void PerformShoot()
@@ -60,5 +67,9 @@ public class PlayerController : StateMachine
         State.Shoot(target);
     }
 
-
+    private IEnumerator ReachedDestination()
+    {
+        yield return new WaitUntil(() => !_agent.pathPending && _agent.remainingDistance < 0.5f);
+        SetShootingState();
+    }
 }

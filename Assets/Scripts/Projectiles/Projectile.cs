@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Projectile
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class Projectile : MonoBehaviour, IShootable, IPoolable
+    public class Projectile : MonoBehaviour, IShootable
     {
         [SerializeField] private ProjectileView _view;
 

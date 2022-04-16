@@ -12,7 +12,7 @@ public class ReadyToShootState : State
 
     public override void Shoot(Vector3 destination)
     {
-        IShootable projectile = (IShootable)PlayerController.Pool.GetItemFromQ();
+        IShootable projectile = PlayerController.Pool.GetItemFromQ();
         projectile.Shoot(destination);
     }
 }

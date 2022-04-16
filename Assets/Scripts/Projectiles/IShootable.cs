@@ -2,7 +2,7 @@
 
 namespace Projectile
 {
-    public interface IShootable
+    public interface IShootable : IPoolable
     {
         float Scale { get; }
         int Damage { get; }

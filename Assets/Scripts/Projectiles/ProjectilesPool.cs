@@ -9,7 +9,7 @@ namespace Projectile
         [SerializeField] private ProjectileFactory _factory;
         [SerializeField] private ProjectileType _type;
 
-        private const int POOL_SIZE = 128;
+        private const int POOL_SIZE = 64;
         private Queue<IShootable> _pool = new Queue<IShootable>();
 
         private Transform _transform;

@@ -1993,6 +1993,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a27c0810e670a4cb2c33e7381626b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _waypointsController: {fileID: 1382354851}
+  _pool: {fileID: 963646892}
 --- !u!195 &1255606242
 NavMeshAgent:
   m_ObjectHideFlags: 0

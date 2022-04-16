@@ -7,8 +7,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(PlayerView))]
 public class PlayerController : StateMachine
 {
-    private WaypointContainer _waypointsContainer;
-    public WaypointContainer Waypoints => _waypointsContainer;
+    private WaypointController _waypointsController;
+    public WaypointController WaypointsController => _waypointsController;
 
     private ProjectilePool _pool;
     public ProjectilePool Pool => _pool;

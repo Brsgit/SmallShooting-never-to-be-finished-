@@ -5,7 +5,7 @@ public class MoveState : State
 
     public override void Move()
     {
-        var waypoint = PlayerController.Waypoints.GetNextWaypoint();
+        var waypoint = PlayerController.WaypointsController.GetNextWaypoint();
         if (waypoint != null)
         {
             var destination = waypoint.ProvideDestination();

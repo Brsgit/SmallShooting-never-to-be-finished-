@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace Projectile
 {
-    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Rigidbody), typeof(ProjectileView))]
     public class Projectile : MonoBehaviour, IShootable
     {
-        [SerializeField] private ProjectileView _view;
-
+        private ProjectileView _view;
         private Rigidbody _rigidbody;
         public ProjectileFactory OrigingFactory { get; set; }
 
@@ -17,7 +16,8 @@ namespace Projectile
 
         private void Awake()
         {
-            _rigidbody = gameObject.GetComponent<Rigidbody>();
+            _view = GetComponent<ProjectileView>();
+            _rigidbody = GetComponent<Rigidbody>();
         }
 
         public void Initialize(float scale, int damage, float speed, float lifeTime)

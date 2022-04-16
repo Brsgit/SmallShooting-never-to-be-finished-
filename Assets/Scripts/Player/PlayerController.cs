@@ -6,8 +6,11 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent), typeof(IRayProvider), typeof(ITargetProvider))]
 public class PlayerController : StateMachine
 {
-    public WaypointsContainer Waypoints;
-    public ProjectilesPool Pool;
+    private WaypointsContainer _waypointsContainer;
+    public WaypointsContainer Waypoints => _waypointsContainer;
+
+    private ProjectilesPool _pool;
+    public ProjectilesPool Pool => _pool;
 
     private NavMeshAgent _agent;
     public NavMeshAgent Agent => _agent;

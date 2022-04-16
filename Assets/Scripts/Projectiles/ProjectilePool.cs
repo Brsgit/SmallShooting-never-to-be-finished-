@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Projectile
 {
-    public class ProjectilesPool : MonoBehaviour
+    public class ProjectilePool : MonoBehaviour
     {
         [SerializeField] private ProjectileFactory _factory;
         [SerializeField] private ProjectileType _type;

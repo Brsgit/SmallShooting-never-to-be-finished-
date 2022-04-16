@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Navigation
 {
-    public class WaypointsContainer : MonoBehaviour
+    public class WaypointContainer : MonoBehaviour
     {
         private List<IDestination> _waypoints;
 

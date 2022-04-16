@@ -1,19 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator _animator;
+
+    private void Awake()
     {
-        
+        _animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetRunAnimation()
     {
-        
+        Debug.Log("Run");
+    }
+
+    public void SetIdleAnimation()
+    {
+        Debug.Log("Idle");
     }
 }

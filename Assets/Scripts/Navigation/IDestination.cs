@@ -1,9 +1,11 @@
 
+using UnityEngine;
+
 namespace Navigation
 {
     public interface IDestination
     {
-        void MoveTo();
+        Vector3 ProvideDestination();
     }
 
 }

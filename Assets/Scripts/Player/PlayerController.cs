@@ -3,17 +3,22 @@ using Projectile;
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(IRayProvider), typeof(ITargetProvider))]
+[RequireComponent(typeof(NavMeshAgent), typeof(IRayProvider), typeof(ITargetProvider))]
 public class PlayerController : StateMachine
 {
     public WaypointsContainer Waypoints;
     public ProjectilesPool Pool;
 
+    private NavMeshAgent _agent;
+    public NavMeshAgent Agent => _agent;
+
     private IRayProvider _rayProvider;
     private ITargetProvider _targetProvider;
 
+
     private void Awake()
     {
+        _agent = GetComponent<NavMeshAgent>();
         _rayProvider = GetComponent<IRayProvider>();
         _targetProvider = GetComponent<ITargetProvider>();
     }

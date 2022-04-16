@@ -19,6 +19,11 @@ namespace Navigation
 
         public IDestination GetNextWaypoint()
         {
+            if (_nextWaypoint == _waypoints.Count)
+            {
+                Debug.Log("Reached last destination point");
+                return null;
+            }
             return _waypoints[_nextWaypoint++];
         }
 

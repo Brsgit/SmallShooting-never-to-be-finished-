@@ -12,9 +12,9 @@ namespace Navigation
             _transform = transform;
         }
 
-        public void MoveTo()
+        public Vector3 ProvideDestination()
         {
-            throw new NotImplementedException();
+            return _transform.position;
         }
     }
 }

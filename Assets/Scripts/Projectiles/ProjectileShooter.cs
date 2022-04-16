@@ -4,6 +4,7 @@ using UnityEngine;
 public class ProjectileShooter : MonoBehaviour
 {
     [SerializeField] private ProjectilesPool _pool;
+
     private Camera _cam;
 
     private Vector3 _destination;
@@ -25,7 +26,7 @@ public class ProjectileShooter : MonoBehaviour
     {
         var ray = _cam.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out var hit))
+        if (Physics.Raycast(ray, out var hit))
         {
             _destination = hit.point;
         }

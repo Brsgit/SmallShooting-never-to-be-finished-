@@ -33,6 +33,16 @@ namespace Projectile
         {
             _rigidbody.velocity = destination.normalized * Speed;
         }
+
+        public void Activate()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Recycle()
+        {
+            OrigingFactory.Reclaim(this);
+        }
     }
 
 }

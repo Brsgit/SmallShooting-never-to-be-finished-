@@ -25,10 +25,10 @@ namespace Projectile
             }
         }
 
-        public IShootable GetItemFromQ()
+        public IShootable PrepareProjectile(Vector3 position)
         {
             var projectile = _pool.Dequeue();
-            projectile.Activate();
+            projectile.Activate(position);
             return projectile;
         }
     }

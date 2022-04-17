@@ -1,7 +1,7 @@
-
+using UnityEngine;
 
 public interface IPoolable
 {
-    void Activate();
+    void Activate(Vector3 position);
     void Deactivate();
 }

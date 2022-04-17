@@ -29,13 +29,23 @@ namespace Projectile
             _view.Initialize(this);
         }
 
-        public void Shoot(Vector3 destination)
+        private void Update()
         {
-            _rigidbody.velocity = destination.normalized * Speed;
+            LifeTime -= Time.deltaTime;
+            if(LifeTime <= 0)
+            {
+                Deactivate();
+            }
         }
 
-        public void Activate()
+        public void Shoot(Vector3 destination)
         {
+            _rigidbody.velocity = (destination - transform.position).normalized * Speed;
+        }
+
+        public void Activate(Vector3 position)
+        {
+            gameObject.transform.position = new Vector3(position.x, position.y + 1.0f, position.z + 0.5f);
             gameObject.SetActive(true);
         }
 

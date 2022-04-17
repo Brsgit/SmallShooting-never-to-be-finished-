@@ -1,15 +1,19 @@
 
-public class MoveState : State
+namespace Core
 {
-    public MoveState(PlayerController controller) : base(controller) { }
-
-    public override void Move()
+    public class MoveState : State
     {
-        var waypoint = PlayerController.WaypointsController.GetNextWaypoint();
-        if (waypoint != null)
+        public MoveState(PlayerController controller) : base(controller) { }
+
+        public override void Move()
         {
-            var destination = waypoint.ProvideDestination();
-            PlayerController.Agent.destination = destination;
+            var waypoint = PlayerController.WaypointsController.GetNextWaypoint();
+            if (waypoint != null)
+            {
+                var destination = waypoint.ProvideDestination();
+                PlayerController.Agent.destination = destination;
+            }
         }
     }
+
 }

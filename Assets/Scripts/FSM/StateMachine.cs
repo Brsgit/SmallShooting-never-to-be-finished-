@@ -1,11 +1,15 @@
 using UnityEngine;
 
-public abstract class StateMachine : MonoBehaviour
+namespace Core
 {
-    protected State State;
-
-    public void SetState(State state)
+    public abstract class StateMachine : MonoBehaviour
     {
-        State = state;
+        protected State State;
+
+        public void SetState(State state)
+        {
+            State = state;
+        }
     }
+
 }

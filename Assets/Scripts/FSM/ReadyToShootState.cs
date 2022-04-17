@@ -1,18 +1,17 @@
 using Projectile;
 using UnityEngine;
 
-public class ReadyToShootState : State
+namespace Core
 {
-    public ReadyToShootState(PlayerController controller) : base(controller) { }
-
-    public override void Start()
+    public class ReadyToShootState : State
     {
-        base.Start();
+        public ReadyToShootState(PlayerController controller) : base(controller) { }
+
+        public override void Shoot(Vector3 destination)
+        {
+            IShootable projectile = PlayerController.Pool.PrepareProjectile(PlayerController.transform.position);
+            projectile.Shoot(destination);
+        }
     }
 
-    public override void Shoot(Vector3 destination)
-    {
-        IShootable projectile = PlayerController.Pool.GetItemFromQ();
-        projectile.Shoot(destination);
-    }
 }

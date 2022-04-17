@@ -1,10 +1,15 @@
+using UnityEngine;
 
-public class WinState : State
+namespace Core
 {
-    public WinState(PlayerController controller) : base(controller) { }
-
-    public override void Start()
+    public class WinState : State
     {
-        base.Start();
+        public WinState(PlayerController controller) : base(controller) { }
+
+        public override void Win()
+        {
+            Debug.Log("You won!");
+        }
     }
+
 }

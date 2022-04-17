@@ -1,17 +1,21 @@
 using UnityEngine;
 
-public abstract class State 
+namespace Core
 {
-    protected PlayerController PlayerController;
-
-    public State(PlayerController controller)
+    public abstract class State
     {
-        PlayerController = controller;
+        protected PlayerController PlayerController;
+
+        public State(PlayerController controller)
+        {
+            PlayerController = controller;
+        }
+
+        public virtual void Win() { }
+
+        public virtual void Shoot(Vector3 destination) { }
+
+        public virtual void Move() { }
     }
 
-    public virtual void Start() { }
-
-    public virtual void Shoot(Vector3 destination) { }
-
-    public virtual void Move() { }
 }
